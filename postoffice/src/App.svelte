@@ -1,7 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { HtmlTag } from "svelte/internal";
-  import { writable } from 'svelte/store'
   import Email from './lib/Email.svelte';
   import Waiting from './lib/Waiting.svelte';
   import randomWords from "random-words";
@@ -142,11 +140,11 @@
 
           {#if emails = []}
             <Waiting receivingEmail={receivingEmail}/>
+          {:else}
+            {#each emails as email (email.suffix)}
+              <Email email={email}/>
+            {/each}
           {/if} 
-          
-          {#each emails as email (email.suffix)}
-            <Email email={email}/>
-          {/each}
 
         </div>
       </div>
