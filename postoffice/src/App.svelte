@@ -36,6 +36,9 @@
     emails = data.mails;
     stats = data.stats;
   }
+
+  // Automatic refresh every 10 seconds (in milliseconds)
+  setInterval(manualReload, 10000); 
 </script>
 
 <main>
