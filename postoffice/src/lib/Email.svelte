@@ -36,7 +36,7 @@
                   <button
                     class="btn btn-primary"
                     type="button"
-                    style="padding: 2px 10px; border-radius: 5px; color: rgb(90, 179, 75); background: rgba(90, 179, 75, 0.1); margin-right: 10px; font-size: 14px; border-color: rgb(90, 179, 75);"
+                    style="padding: 2px 10px; border-radius: 5px; color: rgb(90, 179, 75); background: rgba(90, 179, 75, 0.1); font-size: 14px; border-color: rgb(90, 179, 75);"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 16px; margin-bottom: 3px; margin-right: 5px;">
                       <path
@@ -49,6 +49,7 @@
                     </svg>
                     Delete
                   </button>
+                  <!--
                   <button
                     class="btn btn-primary"
                     type="button"
@@ -68,6 +69,7 @@
                     </svg>
                     Redirect to my email
                   </button>
+                  -->
                 </div>
               </div>
             </div>

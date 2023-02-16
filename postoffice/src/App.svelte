@@ -139,7 +139,7 @@
         </div>
         <div class="col-md-12 col-lg-7 col-xxl-8" style="padding-right: 12px; padding-left: 12px;">
 
-          {#if emails = []}
+          {#if emails.length === 0}
             <Waiting receivingEmail={receivingEmail}/>
           {:else}
             {#each emails as email (email.suffix)}
