@@ -70,7 +70,7 @@
               <p class="text-center" style="margin-bottom: 2px; font-weight: bold; font-size: 12px; color: rgb(153, 153, 153); letter-spacing: 1px;">
                 CHANGE DOMAIN<span class="fw-semibold" style="margin-left: 5px; padding: 1px 4px; background: #5ab34b; border-radius: 5px; border-style: none; color: rgb(255, 255, 255); letter-spacing: 0px;">SOON</span>
               </p>
-              <select style="width: 100%; background: rgba(255, 255, 255, 0); border-style: none; text-align: center;" disabled="" readonly="">
+              <select style="width: 100%; background: rgba(255, 255, 255, 0); border-style: none; text-align: center;" disabled>
                 <option value="junk.boats">junk.boats</option>
               </select>
             </div>
