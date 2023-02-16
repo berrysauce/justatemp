@@ -1,7 +1,7 @@
 <script>
 	export let email;
 
-  async function getReadableDate(unixTimestamp) {
+  function getReadableDate(unixTimestamp) {
     const milliseconds = unixTimestamp * 1000 
     const dateObject = new Date(milliseconds)
     const humanDateFormat = dateObject.toLocaleString() 
