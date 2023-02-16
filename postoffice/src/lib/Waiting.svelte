@@ -9,6 +9,7 @@
           <span class="spinner-border" role="status" style="border-width: 3px; margin-bottom: 10px; color: rgb(90, 179, 75);" /><br />
           Waiting for emails
         </h4>
+        <!-- SSE is used by Cloudflare to hide data from potential bots -->
         <p class="text-center" style="margin-bottom: 0px;">
           As of now, we haven't received anything. Make sure to address your emails to&nbsp;<!--sse-->
           <span class="font-monospace"><span style="background-color: rgba(255, 255, 255, 0);">{receivingEmail}</span></span>
