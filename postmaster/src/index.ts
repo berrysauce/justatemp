@@ -111,6 +111,21 @@ app.get("/get/mail", async (c) => {
 	})
 })
 
+app.get("/delete/mail", async (c) => {
+	// delete mail
+
+	// get mail key (user@example.com-12345)
+	const key = c.req.query("key")
+
+	await c.env.POST_DB.delete(key)
+
+	return c.json({
+		"status": "ok",
+		"code": 200,
+		"msg": "Mail deleted"
+	})
+})
+
 // -------------------------
 
 export default app

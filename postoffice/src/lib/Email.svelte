@@ -1,12 +1,26 @@
 <script>
 	export let email;
 
-    async function getReadableDate(unixTimestamp) {
-        const milliseconds = unixTimestamp * 1000 
-        const dateObject = new Date(milliseconds)
-        const humanDateFormat = dateObject.toLocaleString() 
-        return humanDateFormat
+  async function getReadableDate(unixTimestamp) {
+    const milliseconds = unixTimestamp * 1000 
+    const dateObject = new Date(milliseconds)
+    const humanDateFormat = dateObject.toLocaleString() 
+    return humanDateFormat
+  }
+
+  async function deleteEmail() {
+    if (confirm("Do you really want to permanently delete this email?")) {
+      let emailKey = email.recipient + "-" + email.suffix
+      const response = await fetch(`https://postmaster.junk.boats/delete/mail?key=${emailKey}`);
+      const data = await response.json();
+
+      if (data.code === 200) {
+        window.location.reload();
+      } else {
+        console.log(`ERROR - Failed to delete email with request status ${data.code}`)
+      }
     }
+  }
 </script>
 
 <main>
@@ -35,6 +49,7 @@
                 <div class="float-end" style="margin-top: 8px;">
                   <button
                     class="btn btn-primary"
+                    on:click={() => deleteEmail()}
                     type="button"
                     style="padding: 2px 10px; border-radius: 5px; color: rgb(90, 179, 75); background: rgba(90, 179, 75, 0.1); font-size: 14px; border-color: rgb(90, 179, 75);"
                   >
