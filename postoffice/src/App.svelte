@@ -6,7 +6,7 @@
 
   let receivingEmail = localStorage.getItem("receivingEmail")
   let copyrightYear = new Date().getFullYear();
-  let emails = [];
+  let emails = []
   let stats = {}
 
   onMount(async function () {
@@ -16,7 +16,7 @@
     stats = data.stats;
     
     if (localStorage.getItem("receivingEmail") === null) {
-      generateEmail()
+      generateEmail(false)
     }
   });
 
@@ -58,6 +58,7 @@
               <p class="text-center" style="margin-bottom: 2px; font-weight: bold; font-size: 12px; color: rgb(153, 153, 153); letter-spacing: 1px;">
                 RECEIVING EMAILS ON
               </p>
+              <!-- SSE is used by Cloudflare to hide data from potential bots -->
               <!--sse-->
               <p class="font-monospace text-center" style="margin-bottom: 0px;">
                 {receivingEmail}
