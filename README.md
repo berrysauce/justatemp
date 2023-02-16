@@ -1,5 +1,5 @@
-# junk.boats
-♻️ The free temporary email service powered by Cloudflare
+<h1 align="center">♻️ junk.boats</h1>
+<p align="center">The free temporary email service powered by Cloudflare</p>
 
 [![CodeQL](https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql)
 
