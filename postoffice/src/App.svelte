@@ -37,7 +37,7 @@
     stats = data.stats;
   }
 
-  // Automatic refresh every 10 seconds (in milliseconds)
+  // automatic refresh every 10 seconds (in milliseconds)
   setInterval(manualReload, 10000); 
 </script>
 
@@ -96,8 +96,8 @@
               </svg>
               Re-generate burner email
             </button>
-            <button class="btn btn-primary" type="button" on:click={() => manualReload()} style="width: 100%; border-radius: 10px; background: rgba(33, 37, 41, 0); padding: 10px 30px; color: rgb(90, 179, 75); border: 1px none rgb(33, 37, 41);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 18px; margin-bottom: 3px; margin-right: 5px;">
+            <button class="btn btn-primary" id="refreshButton" type="button" on:click={() => manualReload()} style="width: 100%; border-radius: 10px; background: rgba(33, 37, 41, 0); padding: 10px 30px; color: rgb(90, 179, 75); border: 1px none rgb(33, 37, 41);">
+              <svg class="rotate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 18px; margin-bottom: 3px; margin-right: 5px;">
                 <path
                   d="M4 4V9H4.58152M19.9381 11C19.446 7.05369 16.0796 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9M4.58152 9H9M20 20V15H19.4185M19.4185 15C18.2317 17.9318 15.3574 20 12 20C7.92038 20 4.55399 16.9463 4.06189 13M19.4185 15H15"
                   stroke="currentColor"
@@ -108,6 +108,20 @@
               </svg>
               Manually reload emails
             </button>
+            <script>
+              // make the SVG in the manual refresh button spinnable
+              const refreshButton = document.getElementById("refreshButton");
+              const refreshIcon = refreshButton.querySelector("svg");
+
+              refreshButton.addEventListener("click", function() {
+                refreshIcon.classList.add("rotate");
+                
+                // remove the class after the animation finishes
+                setTimeout(function() {
+                  refreshIcon.classList.remove("rotate");
+                }, 1000); // set the timeout to the same duration as the animation
+              });
+            </script>
             <p style="margin-top: 100px; color: rgb(164, 164, 164); font-size: 14px;"><span class="font-monospace" style="color: rgb(90, 179, 75);">{stats.count}</span>&nbsp;emails received since 02/2023</p>
             <ul class="list-inline text-start" style="margin-bottom: 0px; margin-top: 0px; font-size: 12px; color: rgb(164, 164, 164);">
               <li class="list-inline-item">
@@ -155,3 +169,18 @@
     </div>
   </section>
 </main>
+
+<style>
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rotate {
+    animation: spin 1s linear;
+  }
+</style>
