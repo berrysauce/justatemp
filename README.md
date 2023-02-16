@@ -14,3 +14,6 @@ Incoming mails go to Mailgun and get stored there. Their service also sends a HT
 
 ### Why the domain "junk.boats"?
 I wanted a domain with "junk" in it, and the .boats TLD was free, so I decided to use that.
+
+### Development
+More on that soon
