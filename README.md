@@ -1,6 +1,8 @@
 # junk.boats
 ♻️ The free temporary email service powered by Cloudflare
 
+[![CodeQL](https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql)
+
 ### What is junk.boats?
 junk.boats is a yet another, free to use, open source, and of course, privacy-friendly, temporary email generator. You can use junk.boats to receive emails from sites you don't really want to give your email to. All received emails are publicly stored for 2 hours and then permanently deleted.
 
