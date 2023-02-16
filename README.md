@@ -1,7 +1,10 @@
 <h1 align="center">♻️ junk.boats</h1>
-<p align="center">The free temporary email service powered by Cloudflare</p>
-
-[![CodeQL](https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql)
+<p align="center">The free temporary email service powered by Cloudflare
+<br>
+</br>
+<img alt="CodeQL" src="https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql/badge.svg">
+<img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/berrysauce/junk.boats?color=blue&include_prereleases&label=latest%20release">
+</p>
 
 ### What is junk.boats?
 junk.boats is a yet another, free to use, open source, and of course, privacy-friendly, temporary email generator. You can use junk.boats to receive emails from sites you don't really want to give your email to. All received emails are publicly stored for 2 hours and then permanently deleted.
