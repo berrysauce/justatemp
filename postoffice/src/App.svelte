@@ -26,7 +26,9 @@
     localStorage.setItem("receivingEmail", receivingEmail)
 
     if (reload) {
-      window.location.reload();
+      // use this instead of window.location.reload(); to avoid resending POST requests
+      // @ts-ignore
+      window.location = window.location.href;
     }
   }
 
