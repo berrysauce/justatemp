@@ -63,7 +63,7 @@
               </p>
               <!-- SSE is used by Cloudflare to hide data from potential bots -->
               <!--sse-->
-              <p class="font-monospace text-center" style="margin-bottom: 0px;">
+              <p class="font-monospace text-center text-break" style="margin-bottom: 0px;">
                 {receivingEmail}
               </p>
               <!--/sse-->
