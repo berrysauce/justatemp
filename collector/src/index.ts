@@ -12,6 +12,11 @@ export default {
     	const body = await new Response(message.raw).arrayBuffer();
     	const email = await parser.parse(body);
 
+		// count email for statistics
+		let prev_count = await env.POST_DB.get("stats-count")
+		if (prev_count === null) {prev_count = "0"};
+		await env.POST_DB.put("stats-count", String(parseInt(prev_count)+1))
+
 		let sender = email.from.address
 		let recipient = email.to[0].address
 
