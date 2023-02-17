@@ -26,7 +26,7 @@ export default {
 		// suffix acts as the key, while the email is used for assignment
 		const key = recipient + "-" + suffix
 
-		let formatted_content = email.text.replace("\n", "<br>")
+		let formatted_content = email.text.replaceAll("\n", "<br>")
 
 		// for an example email JSON see example.json
 		const data = {
