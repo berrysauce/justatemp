@@ -11,7 +11,7 @@
         </h4>
         <!-- SSE is used by Cloudflare to hide data from potential bots -->
         <p class="text-center" style="margin-bottom: 0px;">
-          As of now, we haven't received anything. Make sure to address your emails to&nbsp;<!--sse-->
+          As of now, we haven't received anything. It might take a few seconds before emails show up here. Make sure to address your emails to&nbsp;<!--sse-->
           <span class="font-monospace"><span style="background-color: rgba(255, 255, 255, 0);">{receivingEmail}</span></span>
           <!--/sse-->.
         </p>
