@@ -1,106 +1,13 @@
 {
-    "message": [
-      {
-        "headers": [
-          {
-            "key": "received",
-            "value": "*****"
-          },
-          {
-            "key": "dkim-signature",
-            "value": "*****"
-          },
-          {
-            "key": "received",
-            "value": "*****"
-          },
-          {
-            "key": "received",
-            "value": "*****"
-          },
-          {
-            "key": "dkim-signature",
-            "value": "*****"
-          },
-          {
-            "key": "dkim-signature",
-            "value": "*****"
-          },
-          {
-            "key": "x-me-sender",
-            "value": "*****"
-          },
-          {
-            "key": "x-me-proxy-cause",
-            "value": "*****"
-          },
-          {
-            "key": "x-me-proxy",
-            "value": "*****"
-          },
-          {
-            "key": "feedback-id",
-            "value": "*****"
-          },
-          {
-            "key": "received",
-            "value": "*****"
-          },
-          {
-            "key": "x-mailer",
-            "value": "*****"
-          },
-          {
-            "key": "user-agent",
-            "value": "*****"
-          },
-          {
-            "key": "mime-version",
-            "value": "1.0"
-          },
-          {
-            "key": "message-id",
-            "value": "*****"
-          },
-          {
-            "key": "date",
-            "value": "Fri, 17 Feb 2023 16:51:22 +0100"
-          },
-          {
-            "key": "from",
-            "value": "\"User @ example\" <user@example.com>"
-          },
-          {
-            "key": "to",
-            "value": "user@example.com"
-          },
-          {
-            "key": "subject",
-            "value": "Example Email"
-          },
-          {
-            "key": "content-type",
-            "value": "multipart/alternative; boundary=bd26f6f651004c9ea5e42905ac1736ab"
-          }
-        ],
-        "from": {
-          "address": "user@example.com",
-          "name": "User @ example"
-        },
-        "to": [
-          {
-            "address": "user@example.com",
-            "name": ""
-          }
-        ],
-        "subject": "Example Email",
-        "messageId": "*****",
-        "date": "2023-02-17T15:51:22.000Z",
-        "html": "*****",
-        "text": "*****",
-        "attachments": []
-      }
-    ],
-    "level": "log",
-    "timestamp": 1676649105129
+  "headers": [
+      "***"
+  ],
+  "from": { "address": "user@example.com", "name": "User @ Example" },
+  "to": [{ "address": "user@example.com", "name": "" }],
+  "subject": "Test Email",
+  "messageId": "***",
+  "date": "2023-02-17T20:03:53.000Z",
+  "html": "***",
+  "text": "***",
+  "attachments": []
 }

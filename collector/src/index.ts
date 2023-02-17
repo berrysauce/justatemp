@@ -12,8 +12,8 @@ export default {
     	const body = await new Response(message.raw).arrayBuffer();
     	const email = await parser.parse(body);
 
-		let sender = email.message.from.address
-		let recipient = email.message.to.address
+		let sender = email.from.address
+		let recipient = email.to[0].address
 
 		// generate random string (len = 8)
 		const suffix = Math.random().toString(16).slice(2, 10);
@@ -26,11 +26,10 @@ export default {
 			"suffix": suffix,
 			"recipient": recipient,
 			"sender": sender,
-			"subject": email.message.subject,
-			"content-plain": email.message.text,
-			"content-html": email.message.html,
-			"timestamp": email.timestamp,
-			"date": email.message.date
+			"subject": email.subject,
+			"content-plain": email.text,
+			"content-html": email.html,
+			"date": email.date
 		}
 
 		await env.POST_DB.put(key, JSON.stringify(data), {expirationTtl: 7200})

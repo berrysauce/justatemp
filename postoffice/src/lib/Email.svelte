@@ -15,7 +15,9 @@
       const data = await response.json();
 
       if (data.code === 200) {
-        window.location.reload();
+        // use this instead of window.location.reload(); to avoid resending POST requests
+        // @ts-ignore
+        window.location = window.location.href;
       } else {
         console.log(`ERROR - Failed to delete email with request status ${data.code}`)
       }
@@ -122,7 +124,7 @@
                 fill="currentColor"
               />
             </svg>
-            {email.suffix} - Received: {getReadableDate(email.timestamp)} UTC
+            {email.suffix} - Received: {email.date} UTC
           </p>
           <!--/sse-->
         </div>
