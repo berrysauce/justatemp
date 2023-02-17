@@ -26,6 +26,8 @@ export default {
 		// suffix acts as the key, while the email is used for assignment
 		const key = recipient + "-" + suffix
 
+		let formatted_content = email.text.replace("\n", "<br>")
+
 		// for an example email JSON see example.json
 		const data = {
 			"suffix": suffix,
@@ -33,6 +35,7 @@ export default {
 			"sender": sender,
 			"subject": email.subject,
 			"content-plain": email.text,
+			"content-plain-formatted": formatted_content,
 			"content-html": email.html,
 			"date": email.date
 		}
