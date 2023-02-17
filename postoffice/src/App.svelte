@@ -38,7 +38,7 @@
   }
 
   // automatic refresh every 10 seconds (in milliseconds)
-  setInterval(manualReload, 10000); 
+  setInterval(manualReload, 15000); 
 </script>
 
 <main>
