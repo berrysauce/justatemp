@@ -9,13 +9,13 @@
 ### What is junk.boats?
 junk.boats is a yet another, free to use, open source, and of course, privacy-friendly, temporary email generator. You can use junk.boats to receive emails from sites you don't really want to give your email to. All received emails are publicly stored for 2 hours and then permanently deleted.
 
-### What are postmaster and postoffice?
-`postmaster` is the email receiver and distributor in the form of an API powered by a HonoJS Cloudflare worker. `postoffice` is the Vite + Svelte frontend which displays the received emails to the user.
+<img alt="junkboats-screenshot" src="https://bcdn.berrysauce.me/shared/screely-1676654369981.png">
+
+### What are collector, postmaster, and postoffice?
+`collector` is a Cloudflare email worker which receives and stores all incoming mails. `postmaster` is the email distributor in the form of an API powered by a HonoJS Cloudflare worker. `postoffice` is the Vite + Svelte frontend which displays the received emails to the user.
 
 ### How does junk.boats work?
-⚠️ For now, junk.boats uses Mailgun to send & receive emails. This not only results in delays, but also means that **all incoming mails are stored for up to 3 days on Mailgun's servers**. When Cloudflare's email workers get a bit better and more reliable I'll switch to using them.
-
-Incoming mails go to Mailgun and get stored there. Their service also sends a HTTP POST request to `postmaster.junk.boats`. "Postmaster" is the API/backend behind this service. It receives the request and stores the email in a Cloudflare KV database. The frontend generates a random email address and requests all emails for this address. If emails are available, it displays them, sorted by the UNIX timestamp included in the KV entry.
+Incoming mails go to the `collector` email worker. It saves the email in a Cloudflare KV database. The frontend generates a random email address and requests all emails for this address from the `postmaster`. If emails are available, it displays them, sorted by the UNIX timestamp included in the KV entry.
 
 ### Why the domain "junk.boats"?
 I wanted a domain with "junk" in it, and the .boats TLD was free, so I decided to use that.
