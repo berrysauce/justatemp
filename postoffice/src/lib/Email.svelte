@@ -13,7 +13,7 @@
       let emailKey = email.recipient + "-" + email.suffix
       const response = await fetch(`https://postmaster.junk.boats/delete/mail?key=${emailKey}`);
       const data = await response.json();
-
+      
       if (data.code === 200) {
         // use this instead of window.location.reload(); to avoid resending POST requests
         // @ts-ignore

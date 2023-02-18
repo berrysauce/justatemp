@@ -40,7 +40,9 @@
   }
 
   // automatic refresh every 10 seconds (in milliseconds)
-  setInterval(manualReload, 15000); 
+  // intervalID is used with clearInterval to stop the given interval
+  const intervalID = setInterval(manualReload, 15000); 
+  // clearInterval(intervalID);
 </script>
 
 <main>
