@@ -24,7 +24,7 @@ Incoming mails go to the `collector` email worker. It saves the email in a Cloud
 
 <p align="center">
   <br>
-  <img alt="junkboats Diagram" src="https://bcdn.berrysauce.me/shared/Unbenanntes%20Diagramm.drawio(2).png">
+  <img alt="junkboats Diagram" src="https://bcdn.berrysauce.me/shared/Unbenanntes%20Diagramm.drawio(3).png">
   <br>
 </p>
 
