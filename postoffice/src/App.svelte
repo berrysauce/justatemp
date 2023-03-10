@@ -2,15 +2,15 @@
   import { onMount } from "svelte";
   import Email from './lib/Email.svelte';
   import Waiting from './lib/Waiting.svelte';
-  import Reload from './lib/Reload.svelte';
+  import ActiveModal from './lib/ActiveModal.svelte';
   import randomWords from "random-words";
 
   let receivingEmail = localStorage.getItem("receivingEmail")
   let copyrightYear = new Date().getFullYear();
   let emails = []
   let stats = {}
-  // automatically stop auto-refresh after 30 refreshes
-  let stopReloadOn = 30
+  // automatically stop auto-refresh after 25 refreshes
+  let stopReloadOn = 25
   let reloadCounter = 0
   let reloadActive = true
 
@@ -177,7 +177,7 @@
         <div class="col-md-12 col-lg-7 col-xxl-8" style="padding-right: 12px; padding-left: 12px;">
 
           {#if reloadActive === false}
-            <Reload/>
+            <ActiveModal/>
           {/if}
 
           {#if emails.length === 0 && reloadActive === true}
@@ -187,7 +187,6 @@
               <Email email={email}/>
             {/each}
           {/if}
-
         </div>
       </div>
     </div>
