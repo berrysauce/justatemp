@@ -9,8 +9,8 @@
   let copyrightYear = new Date().getFullYear();
   let emails = []
   let stats = {}
-  // automatically stop auto-refresh after 25 refreshes
-  let stopReloadOn = 25
+  // automatically stop auto-refresh after 20 refreshes (5 minutes)
+  let stopReloadOn = 20
   let reloadCounter = 0
   let reloadActive = true
 
