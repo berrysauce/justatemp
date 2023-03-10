@@ -145,19 +145,19 @@
             <p style="margin-top: 100px; color: rgb(164, 164, 164); font-size: 14px;"><span class="font-monospace" style="color: rgb(90, 179, 75);">{stats.count}</span>&nbsp;emails received since 02/2023</p>
             <ul class="list-inline text-start" style="margin-bottom: 0px; margin-top: 0px; font-size: 12px; color: rgb(164, 164, 164);">
               <li class="list-inline-item">
-                <a href="#" style="color: inherit;">Terms of Service</a>
+                <a href="https://berrysauce.me/terms" target="_blank" rel="noreferrer" style="color: inherit;">Terms of Service</a>
               </li>
               <li class="list-inline-item">
-                <a href="#" style="color: inherit;">Privacy Policy</a>
+                <a href="https://berrysauce.me/privacy" target="_blank" rel="noreferrer" style="color: inherit;">Privacy Policy</a>
               </li>
               <li class="list-inline-item">
-                <a href="#" style="color: inherit;">Cookies</a>
+                <a href="https://github.com/berrysauce/junk.boats/blob/main/LICENSE" target="_blank" rel="noreferrer" style="color: inherit;">License</a>
               </li>
               <li class="list-inline-item">
-                <a href="#" style="color: inherit;">Contribute on GitHub</a>
+                <a href="https://github.com/berrysauce/junk.boats" target="_blank" rel="noreferrer" style="color: inherit;">Star/Contribute on GitHub</a>
               </li>
               <li class="list-inline-item">
-                <a href="#" style="color: inherit;">Donate</a>
+                <a href="https://ko-fi.com/berrysauce" target="_blank" rel="noreferrer" style="color: inherit;">Donate</a>
               </li>
             </ul>
             <p class="text-start" style="margin-bottom: 0px; color: rgb(164, 164, 164); font-size: 12px; margin-top: 10px;">
