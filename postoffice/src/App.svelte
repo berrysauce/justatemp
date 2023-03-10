@@ -2,12 +2,17 @@
   import { onMount } from "svelte";
   import Email from './lib/Email.svelte';
   import Waiting from './lib/Waiting.svelte';
+  import Reload from './lib/Reload.svelte';
   import randomWords from "random-words";
 
   let receivingEmail = localStorage.getItem("receivingEmail")
   let copyrightYear = new Date().getFullYear();
   let emails = []
   let stats = {}
+  // automatically stop auto-refresh after 30 refreshes
+  let stopReloadOn = 30
+  let reloadCounter = 0
+  let reloadActive = true
 
   onMount(async function () {
     const response = await fetch(`https://postmaster.junk.boats/get/mail?address=${receivingEmail}`);
@@ -39,10 +44,21 @@
     stats = data.stats;
   }
 
+  async function timedReload() {
+    if (reloadCounter >= stopReloadOn) {
+      reloadActive = false
+      clearInterval(intervalID);
+    }
+    const response = await fetch(`https://postmaster.junk.boats/get/mail?address=${receivingEmail}`);
+    const data = await response.json();
+    emails = data.mails;
+    stats = data.stats;
+    reloadCounter += 1
+  }
+
   // automatic refresh every 10 seconds (in milliseconds)
   // intervalID is used with clearInterval to stop the given interval
-  const intervalID = setInterval(manualReload, 15000); 
-  // clearInterval(intervalID);
+  const intervalID = setInterval(timedReload, 15000); 
 </script>
 
 <main>
@@ -160,13 +176,17 @@
         </div>
         <div class="col-md-12 col-lg-7 col-xxl-8" style="padding-right: 12px; padding-left: 12px;">
 
-          {#if emails.length === 0}
+          {#if reloadActive === false}
+            <Reload/>
+          {/if}
+
+          {#if emails.length === 0 && reloadActive === true}
             <Waiting receivingEmail={receivingEmail}/>
           {:else}
             {#each emails as email (email.suffix)}
               <Email email={email}/>
             {/each}
-          {/if} 
+          {/if}
 
         </div>
       </div>
