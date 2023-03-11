@@ -18,7 +18,7 @@ app.use("*", prettyJSON(), cors({
 // -------------------------
 
 app.get("/", async (c) => {
-	return c.text(`(⌐⊙‿⊙) Heyyo - I'm the Postmaster behind ${domain}. Incoming messages go here!`)
+	return c.text(`(⌐⊙‿⊙) Heyyo - I'm the Postmaster behind ${domain}. I handle all messages.`)
 })
 
 app.get("/get/mail", async (c) => {
@@ -57,6 +57,7 @@ app.get("/get/mail", async (c) => {
 	for (const key of res["keys"]) {
 		const mail_res = await c.env.POST_DB.get(key["name"])
 		// convert string back to JSON
+		// @ts-ignore
 		mails.push(JSON.parse(mail_res))
 	}
 	
