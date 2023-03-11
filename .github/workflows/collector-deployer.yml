@@ -14,6 +14,6 @@ jobs:
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          preCommands: npm build
+          preCommands: npm run build
           workingDirectory: ./collector
           apiToken: ${{ secrets.CF_API_TOKEN }}
