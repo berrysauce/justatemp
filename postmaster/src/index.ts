@@ -27,7 +27,7 @@ app.get("/get/mail", async (c) => {
 	// parse address query
 	const address = c.req.query("address")
 	// and require query
-	if (address === undefined) {
+	if (address === undefined || address === "") {
 		return c.json({
 			"status": "bad request",
 			"code": 400,
