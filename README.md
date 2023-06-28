@@ -6,7 +6,7 @@
   <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/berrysauce/junk.boats?color=blue&include_prereleases&label=latest%20release">
 </p>
 
-> ℹ️ This service is 100% powered by Cloudflare. **It's not sponsored**, I just wanted to experiment with other platforms and technologies.
+> ℹ️ This service is 100% powered by [Cloudflare](https://www.cloudflare.com/)
 
 ### What is junk.boats?
 junk.boats is a yet another, free to use, open source, and of course, privacy-friendly, temporary email generator. You can use junk.boats to receive emails from sites you don't really want to give your email to. All received emails are publicly stored for 2 hours and then permanently deleted.
