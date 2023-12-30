@@ -8,6 +8,11 @@
 
 > ℹ️ This service is 100% powered by [Cloudflare](https://www.cloudflare.com/)
 
+> [!IMPORTANT]
+> junk.boats will no longer be available under this domain. The service will now be available under [justatemp.com](https://justatemp.com/). Right now, it's temporarily unavailable. Please check back in January 2024.
+>
+> **Thanks for all the love, see you all next year ❤️**
+
 ### What is junk.boats?
 junk.boats is a yet another, free to use, open source, and of course, privacy-friendly, temporary email generator. You can use junk.boats to receive emails from sites you don't really want to give your email to. All received emails are publicly stored for 2 hours and then permanently deleted.
 
