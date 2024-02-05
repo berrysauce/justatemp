@@ -91,11 +91,26 @@ app.post("/mail/forward", async (c) => {
 	// forward mail with Mailchannels via Cloudflare Workers
 
 	// get mail key (user@example.com-12345) and forward address
-	const key = c.req.query("key")
-	const forward = c.req.query("forward")
+	const data = await c.req.json()
+	const key = data["key"]
+	const forward = data["forward"]
 
 	// get mail from key
-	const mail = await c.env.POST_DB.get(key)
+	let mail = await c.env.POST_DB.get(key)
+
+	if (mail === null) {
+		return c.json({
+			"status": "error",
+			"code": 500,
+			"msg": "Mail not found"
+		})
+	}
+
+	// convert string back to JSON
+	// @ts-ignore
+	mail = JSON.parse(mail)
+
+	console.log(mail)
 
 	// forward mail with Mailchannels
 	const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
@@ -121,6 +136,12 @@ app.post("/mail/forward", async (c) => {
 				},
 			],
 		}),
+	})
+
+	return c.json({
+		"status": "ok",
+		"code": 200,
+		"msg": "Mail forwarded"
 	})
 })
 
