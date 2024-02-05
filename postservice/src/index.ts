@@ -135,7 +135,7 @@ app.post("/mail/forward", async (c) => {
 			content: [
 				{
 					type: "text/plain",
-					value: mail["content-plain-formatted"] + "\n \nForwarded by justatemp.com on your request.",
+					value: mail["content-plain"] + "\n \nForwarded by justatemp.com on your request.",
 				},
 			],
 		}),
