@@ -4,10 +4,11 @@ import { cors } from "hono/cors"
 import { prettyJSON } from "hono/pretty-json"
 
 interface Env {
-	POST_DB: KVNamespace
+	POST_DB: KVNamespace;
+	DKIM_PRIVATE_KEY: string;
 }
 
-const app = new Hono<{ Bindings: Env }>()
+const app = new Hono<{ Bindings: Env}>()
 const domain = "justatemp.com"
 
 // CHANGE CORS ORIGIN LATER
@@ -111,6 +112,7 @@ app.post("/mail/forward", async (c) => {
 	mail = JSON.parse(mail)
 
 	// forward mail with Mailchannels
+	// with the help of Exerra (https://blog.exerra.xyz/blog/send-emails-cf-workers-email-routing) ❤️
 	const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
 		method: "POST",
 		headers: {
@@ -119,7 +121,10 @@ app.post("/mail/forward", async (c) => {
 		body: JSON.stringify({
 			personalizations: [
 				{
-					to: [{ email: forward, name: forward }],
+					to: [ { email: forward }], // who to send the email to, add your own recipient
+					dkim_domain: "justatemp.com",
+					dkim_selector: "mailchannels", // [selector]._domainkey.yourdomain.com
+					dkim_private_key: c.env.DKIM_PRIVATE_KEY,
 				},
 			],
 			from: {
