@@ -1,4 +1,4 @@
-name = "junkboats-collector"
+name = "justatemp-mailbox"
 main = "src/index.ts"
 compatibility_date = "2023-02-17"
 kv_namespaces = [
