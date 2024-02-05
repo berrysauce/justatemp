@@ -110,8 +110,6 @@ app.post("/mail/forward", async (c) => {
 	// @ts-ignore
 	mail = JSON.parse(mail)
 
-	console.log(mail)
-
 	// forward mail with Mailchannels
 	const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
 		method: "POST",
