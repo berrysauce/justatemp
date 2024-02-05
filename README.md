@@ -2,7 +2,7 @@
 <p align="center">The free temporary email service powered by Cloudflare
   <br>
   </br>
-  <img alt="CodeQL" src="https://github.com/berrysauce/junk.boats/actions/workflows/github-code-scanning/codeql/badge.svg">
+  <img alt="CodeQL" src="https://github.com/berrysauce/justatemp/actions/workflows/github-code-scanning/codeql/badge.svg">
   <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/berrysauce/junk.boats?color=blue&include_prereleases&label=latest%20release">
 </p>
 
