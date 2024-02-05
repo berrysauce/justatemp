@@ -131,11 +131,11 @@ app.post("/mail/forward", async (c) => {
 				email: "forward@justatemp.com",
 				name: `Just A Temp`,
 			},
-			subject: "Forward – " + mail["subject"],
+			subject: "📮 Forward – " + mail["subject"],
 			content: [
 				{
 					type: "text/plain",
-					value: mail["content-plain-formatted"],
+					value: mail["content-plain-formatted"] + "\n \nForwarded by justatemp.com on your request.",
 				},
 			],
 		}),
