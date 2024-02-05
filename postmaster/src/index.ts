@@ -1,14 +1,14 @@
 // src/index.ts
 import { Hono } from "hono"
-import { cors } from 'hono/cors'
-import { prettyJSON } from 'hono/pretty-json'
+import { cors } from "hono/cors"
+import { prettyJSON } from "hono/pretty-json"
 
 interface Env {
 	POST_DB: KVNamespace
 }
 
 const app = new Hono<{ Bindings: Env }>()
-const domain = "junk.boats"
+const domain = "justatemp.com"
 
 // CHANGE CORS ORIGIN LATER
 app.use("*", prettyJSON(), cors({
@@ -21,7 +21,7 @@ app.get("/", async (c) => {
 	return c.text(`(⌐⊙‿⊙) Heyyo - I'm the Postmaster behind ${domain}. I handle all messages.`)
 })
 
-app.get("/get/mail", async (c) => {
+app.get("/mail/get", async (c) => {
 	// get a JSON list of all received emails for an address
 
 	// parse address query
@@ -72,7 +72,7 @@ app.get("/get/mail", async (c) => {
 	})
 })
 
-app.get("/delete/mail", async (c) => {
+app.get("/mail/delete", async (c) => {
 	// delete mail
 
 	// get mail key (user@example.com-12345)
@@ -84,6 +84,43 @@ app.get("/delete/mail", async (c) => {
 		"status": "ok",
 		"code": 200,
 		"msg": "Mail deleted"
+	})
+})
+
+app.post("/mail/forward", async (c) => {
+	// forward mail with Mailchannels via Cloudflare Workers
+
+	// get mail key (user@example.com-12345) and forward address
+	const key = c.req.query("key")
+	const forward = c.req.query("forward")
+
+	// get mail from key
+	const mail = await c.env.POST_DB.get(key)
+
+	// forward mail with Mailchannels
+	const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
+		method: "POST",
+		headers: {
+			"content-type": "application/json",
+		},
+		body: JSON.stringify({
+			personalizations: [
+				{
+					to: [{ email: forward, name: forward }],
+				},
+			],
+			from: {
+				email: "forward@justatemp.com",
+				name: `Just A Temp`,
+			},
+			subject: "Forward – " + mail["subject"],
+			content: [
+				{
+					type: "text/plain",
+					value: mail["content-plain-formatted"],
+				},
+			],
+		}),
 	})
 })
 
