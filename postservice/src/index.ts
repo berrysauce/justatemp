@@ -99,11 +99,21 @@ app.post("/mail/forward", async (c) => {
 	// get mail from key
 	let mail = await c.env.POST_DB.get(key)
 
+	// check if mail exists
 	if (mail === null) {
 		return c.json({
 			"status": "error",
 			"code": 500,
 			"msg": "Mail not found"
+		})
+	}
+
+	// check if forwarding to justatemp.com
+	if ("justatemp.com" in forward) {
+		return c.json({
+			"status": "error",
+			"code": 403,
+			"msg": "Forwarding to justatemp.com is not allowed"
 		})
 	}
 
