@@ -181,7 +181,7 @@
                                     
                                     <span style="top: 0;right: 0;position: absolute;width: 100px;">
                                         <!-- Forward -->
-                                        <button class="btn btn-primary" type="button" style="padding: 4px;border-style: none;background: rgba(255,255,255,0);">
+                                        <button class="btn btn-primary" type="button" on:click={forwardEmail(email)} style="padding: 4px;border-style: none;background: rgba(255,255,255,0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 24px;margin-top: -4px;color: rgb(33,37,41);">
                                                 <path d="M3 10H13C17.4183 10 21 13.5817 21 18V20M3 10L9 16M3 10L9 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                             </svg>
@@ -195,7 +195,7 @@
                                         </button>
                                         
                                         <!-- Delete -->
-                                        <button class="btn btn-primary" on:click={deleteEmail(email)} type="button" style="padding: 4px;border-style: none;background: rgba(255,255,255,0);">
+                                        <button class="btn btn-primary" type="button" on:click={deleteEmail(email)} style="padding: 4px;border-style: none;background: rgba(255,255,255,0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 24px;margin-top: -4px;color: var(--bs-red);">
                                                 <path d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                             </svg>
