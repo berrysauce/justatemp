@@ -19,7 +19,7 @@ app.use("*", prettyJSON(), cors({
 // -------------------------
 
 app.get("/", async (c) => {
-	return c.text(`(⌐⊙‿⊙) Heyyo - I'm the Postmaster behind ${domain}. I handle all messages.`)
+	return c.text(`(⌐⊙‿⊙) Heyyo - I'm the Post Service behind ${domain}. I handle all messages.`)
 })
 
 app.get("/mail/get", async (c) => {

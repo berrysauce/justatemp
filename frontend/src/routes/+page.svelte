@@ -251,9 +251,9 @@
                 Made with lots of 🥨 in Germany
                 
                 <span class="float-end">
-                    <a href="https://berrysauce.me/privacy" style="color: inherit;">Privacy</a>&nbsp;&nbsp;
-                    <a href="https://berrysauce.me/terms" style="color: inherit;">Terms</a>&nbsp;&nbsp;
-                    <a href="https://github.com/berrysauce/justatemp/blob/main/LICENSE" style="color: inherit;">License</a>&nbsp;&nbsp;
+                    <a href="https://berrysauce.me/privacy" target="_blank" style="color: inherit;">Privacy</a>&nbsp;&nbsp;
+                    <a href="https://berrysauce.me/terms" target="_blank" style="color: inherit;">Terms</a>&nbsp;&nbsp;
+                    <a href="https://github.com/berrysauce/justatemp/blob/main/LICENSE" target="_blank" style="color: inherit;">License</a>&nbsp;&nbsp;
                     <a href="mailto:hey@justatemp.com" style="color: inherit;">Contact</a>
                 </span>
             </p>
