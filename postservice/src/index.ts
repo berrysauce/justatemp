@@ -132,10 +132,11 @@ app.post("/mail/forward", async (c) => {
 			personalizations: [
 				{
 					to: [ { email: forward }], // who to send the email to, add your own recipient
+					reply_to: { email: mail["from"] }, // who to reply to
 					dkim_domain: "justatemp.com",
 					dkim_selector: "mailchannels", // [selector]._domainkey.yourdomain.com
 					dkim_private_key: c.env.DKIM_PRIVATE_KEY,
-				},
+				}
 			],
 			from: {
 				email: "forward@justatemp.com",
