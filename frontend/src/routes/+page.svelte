@@ -137,12 +137,22 @@
                     Re-generate
                 </button>
             </div>
-
-            <!-- Loading Indicator -->
-            <div style="padding: 32px;margin-bottom: 32px;">
-                <img src="/assets/img/ring-resize.svg?h=2f4014e589baa9dfda8b268abeba3c2b" alt="Loading" style="width: 32px;height: 32px;margin-top: -8px;margin-right: 16px;">
-                <span style="font-weight: 500;font-size: 20px;">Waiting for incoming emails</span>
-            </div>
+            
+            {#if reloadActive}
+                <!-- Loading Indicator -->
+                <div style="padding: 32px;margin-bottom: 32px;">
+                    <img src="/assets/img/ring-resize.svg?h=2f4014e589baa9dfda8b268abeba3c2b" alt="Loading" style="width: 32px;height: 32px;margin-top: -8px;margin-right: 16px;">
+                    <span style="font-weight: 500;font-size: 20px;">Waiting for incoming emails</span>
+                </div>
+            {:else}
+                <!-- Automatic refresh stopped -->
+                <div style="padding: 32px;margin-bottom: 32px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 32px;margin-top: -6px;margin-right: 16px;color: var(--bs-red);">
+                        <path d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <span style="font-weight: 500;font-size: 20px;">Automatic refresh stopped</span>
+                </div>
+            {/if}
 
             <!-- Error -->
             <!--
