@@ -143,6 +143,7 @@ app.post("/mail/forward", async (c) => {
 				name: `Just A Temp`,
 			},
 			subject: "📮 Forward – " + mail["subject"],
+			reply_to: { email: mail["from"] },
 			content: [
 				{
 					type: "text/plain",
