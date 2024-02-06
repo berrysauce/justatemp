@@ -105,8 +105,15 @@
     <div style="background: var(--bs-red);padding: 16px;">
         <p style="margin-bottom: 0px;color: rgba(255,255,255,0.8);font-weight: 500;">
             <span style="font-weight: 600;color: rgb(255,255,255);">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 20px;margin-top: -4px;margin-right: 8px;">
-                    <path d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor" style="margin-top: -4px;margin-right: 8px;color: rgb(255,221,51);">
+                    <g>
+                        <rect fill="none" height="24" width="24"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M12,2C6.47,2,2,6.47,2,12s4.47,10,10,10s10-4.47,10-10S17.53,2,12,2z"></path>
+                        </g>
+                    </g>
                 </svg>
                 Are you still there?
             </span> 
