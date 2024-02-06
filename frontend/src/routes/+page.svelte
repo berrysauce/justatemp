@@ -168,7 +168,7 @@
             </div>
             -->
 
-            {#if emails.length === 0 && reloadActive}
+            {#if emails.length === 0}
                 <!-- Incoming Emails -->
                 <div style="padding: 32px;border-radius: 16px;margin-bottom: 32px;border: 2px dashed rgb(215,215,215) ;">
                     <p style="font-size: 20px;margin-top: 16px;font-weight: 500;">
