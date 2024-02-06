@@ -176,7 +176,10 @@
                         <div class="d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-bottom: 22px;height: 56px;">
                             <div class="text-start flex-grow-1" style="padding-bottom: 16px;border-bottom: 2px solid rgb(215,215,215);position: relative;display: inline;overflow: hidden;">
                                 <p style="font-size: 20px;margin-bottom: 0px;width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;position: relative;padding-right: 100px;">
-                                    <i class="fas fa-circle" style="margin-top: 6px;margin-right: 8px;color: rgb(255,221,51);"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="margin-top: 6px;margin-right: 8px;color: rgb(255,221,51);">
+                                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/>
+                                    </svg>
                                     {email.sender}
                                     
                                     <span style="top: 0;right: 0;position: absolute;width: 100px;">
