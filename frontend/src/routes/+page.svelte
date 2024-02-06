@@ -126,9 +126,11 @@
             <p class="text-start" style="margin-bottom: 32px;font-size: 20px;">
                 Yet another temporary email generator. But this time open source, ad-free, and privacy-friendly. Generate a temporary email below and receive emails.
             </p>
+            <!-- This site uses Cloudflare's Server-side Excludes (SSE) -->
+            <!-- By using SSE, we can hide information from suspicious visitors -->
             <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 32px;margin-bottom: 16px;">
                 <div style="padding: 8px 30px;border-width: 2px;border-style: solid;border-radius: 16px;width: 100%;margin-right: 16px;height: 50px;margin-bottom: 16px;">
-                    <p class="text-truncate text-start" style="margin-bottom: 0px;font-size: 20px;">{address}</p>
+                    <p class="text-truncate text-start" style="margin-bottom: 0px;font-size: 20px;"><!--sse-->{address}<!--/sse--></p>
                 </div>
                 <button class="btn btn-primary" type="button" on:click={generateEmail} style="padding: 8px 30px;border-radius: 16px;border-width: 2px;border-color: rgb(33,37,41);background: rgb(33,37,41);font-weight: 500;height: 50px;font-size: 20px;min-width: 220px;margin-bottom: 16px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 24px;margin-top: -4px;margin-right: 6px;">
@@ -180,6 +182,7 @@
                     </p>
                 </div>
             {:else}
+                <!--sse-->
                 {#each emails as email}
                     <!-- Email Template -->
                     <div style="padding: 32px;border: 2px solid rgb(215,215,215);border-radius: 16px;margin-bottom: 32px;">
@@ -242,6 +245,7 @@
                         </p>
                     </div>
                 {/each}
+                <!--/sse-->
             {/if}
         </div>
 
@@ -251,9 +255,11 @@
                 We've received&nbsp;
                 
                 <!-- Received Emails -->
+                <!--sse-->
                 <span class="font-monospace" style="color: rgb(255,255,255);background: rgb(33,37,41);border-radius: 10px;padding: 4px 12px;font-size: 14px;margin-right: 2px;margin-left: 2px;">
                     {stats.count}
                 </span>
+                <!--/sse-->
                 
                 &nbsp;emails so far.
             </p>
@@ -264,7 +270,9 @@
                     <a href="https://berrysauce.me/privacy" target="_blank" style="color: inherit;">Privacy</a>&nbsp;&nbsp;
                     <a href="https://berrysauce.me/terms" target="_blank" style="color: inherit;">Terms</a>&nbsp;&nbsp;
                     <a href="https://github.com/berrysauce/justatemp/blob/main/LICENSE" target="_blank" style="color: inherit;">License</a>&nbsp;&nbsp;
+                    <!--sse-->
                     <a href="mailto:hey@justatemp.com" style="color: inherit;">Contact</a>
+                    <!--/sse-->
                 </span>
             </p>
             <p class="text-start" style="margin-bottom: 4px;font-size: 16px;">
