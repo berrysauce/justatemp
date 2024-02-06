@@ -109,7 +109,7 @@ app.post("/mail/forward", async (c) => {
 	}
 
 	// check if forwarding to justatemp.com
-	if ("justatemp.com" in forward) {
+	if (forward.includes("justatemp.com")) {
 		return c.json({
 			"status": "error",
 			"code": 403,
