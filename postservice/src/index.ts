@@ -147,7 +147,7 @@ app.post("/mail/forward", async (c) => {
 			content: [
 				{
 					type: "text/plain",
-					value: mail["content-plain"] + "\n \nForwarded by justatemp.com, yet another temporary email generator." + "\n If you believe this is a mistake or the service is being abused, please contact us at security@justatemp.com.",
+					value: mail["content-plain"] + "\n \nForwarded by justatemp.com, yet another temporary email generator." + "\nIf you believe this is a mistake or the service is being abused, please contact us at security@justatemp.com.",
 				},
 			],
 		}),
