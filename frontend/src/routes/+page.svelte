@@ -238,15 +238,15 @@
 
         <!-- Footer -->
         <div class="text-center p-4 p-lg-5">
-            <p class="text-start" style="margin-bottom: 16px;font-size: 16px;">
+            <p class="text-start" style="margin-bottom: 32px;font-size: 16px;">
                 We've received&nbsp;
                 
                 <!-- Received Emails -->
-                <span class="font-monospace" style="color: rgb(255,255,255);background: rgb(33,37,41);border-radius: 10px;padding: 4px 12px;font-size: 14px;margin-right: 4px;margin-left: 4px;">
+                <span class="font-monospace" style="color: rgb(255,255,255);background: rgb(33,37,41);border-radius: 10px;padding: 4px 12px;font-size: 14px;margin-right: 2px;margin-left: 2px;">
                     {stats.count}
                 </span>
                 
-                &nbsp;emails received so far.
+                &nbsp;emails so far.
             </p>
             <p class="text-start" style="margin-bottom: 4px;font-size: 16px;">
                 Made with lots of 🥨 in Germany
