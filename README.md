@@ -29,3 +29,22 @@ Incoming mails go to the `mailbox` email worker. It saves the email in a Cloudfl
 
 ### Development
 More on that soon
+
+## Deploy the frontend to Cloudflare Workers
+
+Use Node.js 22 or newer. From `frontend/`:
+
+```sh
+npm ci
+npm run build
+npx wrangler deploy --dry-run
+npm run workers:preview
+# After checking the local site, deploy with your Cloudflare credentials:
+npm run workers:deploy
+```
+
+`workers:preview` builds and runs the frontend locally with Wrangler. SvelteKit's Cloudflare adapter emits the server entry point at `.svelte-kit/cloudflare/_worker.js` and the public assets alongside it; its generated `.assetsignore` prevents server code from being served as an asset. The `ASSETS` binding supplies static files while SvelteKit handles SSR and missing routes. `npm run dev` still runs Vite.
+
+The frontend migration does not move the mailbox or postservice data: those are already separate Workers. Keep their existing bindings and secrets. Before changing the frontend custom domain, validate the new Worker URL, grant the deployment token Workers Scripts Edit and copy any Pages build/runtime settings into the Workers configuration or secrets as appropriate. Disable Pages automatic deployments after validation, and remove the old Pages project only after traffic has moved.
+
+See the [Wrangler v3 to v4 guide](https://developers.cloudflare.com/workers/wrangler/migration/update-v3-to-v4/) and [Pages to Workers guide](https://developers.cloudflare.com/workers/static-assets/migration-guides/migrate-from-pages/).

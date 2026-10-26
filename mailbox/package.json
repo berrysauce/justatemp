@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "wrangler dev",
-    "deploy": "wrangler publish"
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "postal-mime": "^1.0.13"

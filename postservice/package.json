@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "wrangler dev",
-    "deploy": "wrangler publish"
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "hono": "^4.11.4"
